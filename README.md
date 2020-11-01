@@ -7,32 +7,33 @@ https://kafka.apache.org/downloads</br>
 </br>
 
 extract the download folder
-go to bin folder
-</br>
-Make sure you are navigated inside the bin directory.</br>
+go to bin folder</br>
+Make sure you are navigated inside the bin directory.</br></br>
 <b>Start Zookeeper and Kafka Broker </b> </br>
 <i>Start up the Zookeeper.</i></br>
 ./zookeeper-server-start.sh ../config/zookeeper.properties</br>
 </br>
 </br>
-<i>Add the below properties in the server.properties</i></br>
+<b><i>Add the below properties in the server.properties</i></b></br>
 listeners=PLAINTEXT://localhost:9092</br>
 auto.create.topics.enable=false</br></br>
-Start up the Kafka Broker</br>
-./kafka-server-start.sh ../config/server.properties</br>
-How to create a topic ?</br>
+
+<b><i>Start up the Kafka Broker</i><b></br>
+./kafka-server-start.sh ../config/server.properties</br></br>
+
+<b><i>How to create a topic ?</i></b></br></br>
 ./kafka-topics.sh --create --topic test-topic -zookeeper localhost:2181 --replication-factor 1 --partitions 4</br>
 How to instantiate a Console Producer?</br>
-Without Key</br>
+<b><i>Without Key</i></b></br>
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic</br>
-With Key</br>
+<b><i>With Key</b></i></br>
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic --property "key.separator=-" --property "parse.key=true"</br>
-How to instantiate a Console Consumer?</br>
-Without Key</br>
+<b>How to instantiate a Console Consumer?</b></br>
+<b><i>Without Key</b></i></br>
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --from-beginning</br>
 With Key</br>
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --from-beginning -property "key.separator= - " --property "print.key=true"</br>
-With Consumer Group</br>
+<b><i>With Consumer Group</b></i></br>
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --group <group-name></br>
 Windows</br>
 Setting Up Multiple Kafka Brokers</br>
