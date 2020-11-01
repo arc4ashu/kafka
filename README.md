@@ -13,10 +13,11 @@ Make sure you are navigated inside the bin directory.</br>
 <b>Start Zookeeper and Kafka Broker </b> </br>
 <i>Start up the Zookeeper.</i></br>
 ./zookeeper-server-start.sh ../config/zookeeper.properties</br>
-
-Add the below properties in the server.properties</br>
+</br>
+</br>
+<i>Add the below properties in the server.properties</i></br>
 listeners=PLAINTEXT://localhost:9092</br>
-auto.create.topics.enable=false</br>
+auto.create.topics.enable=false</br></br>
 Start up the Kafka Broker</br>
 ./kafka-server-start.sh ../config/server.properties</br>
 How to create a topic ?</br>
